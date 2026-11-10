@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pravesh Free Conference</title>
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#10142c,#174d75);
+color:white;
+text-align:center;
+min-height:100vh;
+padding:25px 15px;
+}
+.container{
+max-width:420px;
+margin:35px auto;
+padding:25px;
+background:#ffffff15;
+border:1px solid #ffffff30;
+border-radius:22px;
+}
+h1{color:#43e8ff}
+input{
+width:100%;
+padding:15px;
+margin:10px 0;
+border:0;
+border-radius:10px;
+font-size:16px;
+}
+button{
+width:100%;
+padding:15px;
+margin:8px 0;
+border:0;
+border-radius:10px;
+background:#00d5a0;
+color:#071b22;
+font-size:17px;
+font-weight:bold;
+}
+button:active{transform:scale(.97)}
+#status{margin:18px 0;color:#aaffdd}
+small{color:#ddd}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>📞 Pravesh Free Conference</h1>
+<p>Free Group Audio Calling</p>
+
+<input id="name" placeholder="Apna naam likho">
+<input id="room" placeholder="Room ID likho">
+
+<button onclick="startCall()">Create / Join Room</button>
+<button onclick="leaveCall()">Leave Call</button>
+
+<p id="status">Welcome! Apna room banayein.</p>
+<small>Connect with friends and family</small>
+</div>
+
+<script>
+function startCall(){
+const name=document.getElementById("name").value.trim();
+const room=document.getElementById("room").value.trim();
+
+if(!name || !room){
+document.getElementById("status").innerText=
+"Please enter your name and room ID!";
+return;
+}
+
+document.getElementById("status").innerText=
+"Room "+room+" selected. Audio calling server abhi connect karna baaki hai.";
+}
+
+function leaveCall(){
+document.getElementById("status").innerText="You left the room.";
+}
+</script>
+</body>
+</html>
